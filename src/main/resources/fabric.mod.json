@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "goofy-entities-java",
+	"version": "${version}",
+	"name": "goofy-entities-java",
+	"description": "Add goofy entities to Minecraft!",
+	"authors": [
+		"legoloaf17"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mods/goofy-entities",
+		"sources": "https://github.com/LoafDev/goofy-entities-java"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/goofy-entities-java/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.goofyentities.Goofyentitiesjava"
+		],
+		"client": [
+			"com.goofyentities.GoofyentitiesjavaClient"
+		],
+		"fabric-datagen": [
+			"com.goofyentities.GoofyentitiesjavaDataGenerator"
+		]
+	},
+	"mixins": [
+		"goofy-entities-java.mixins.json",
+		{
+			"config": "goofy-entities-java.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
