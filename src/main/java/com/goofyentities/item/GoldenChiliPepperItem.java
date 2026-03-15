@@ -14,28 +14,28 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 
-public class ChiliPepperItem extends SimplePolymerItem {
-  public static final String itemName = "chili_pepper";
+public class GoldenChiliPepperItem extends SimplePolymerItem {
+  public static final String itemName = "golden_chili_pepper";
 
   static final FoodProperties itemFoodProperties =
-      new FoodProperties.Builder().alwaysEdible().nutrition(2).saturationModifier(2.0f).build();
+      new FoodProperties.Builder().alwaysEdible().nutrition(4).saturationModifier(3.5f).build();
 
   public static final Item.Properties itemProperties =
       new Item.Properties().food(itemFoodProperties);
 
   public static void initialise() {
     ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS)
-        .register((itemGroup) -> itemGroup.accept(ModItems.CHILI_PEPPER));
+        .register((itemGroup) -> itemGroup.accept(ModItems.GOLDEN_CHILI_PEPPER));
 
-    CompostingChanceRegistry.INSTANCE.add(ModItems.CHILI_PEPPER, 0.67f);
+    CompostingChanceRegistry.INSTANCE.add(ModItems.GOLDEN_CHILI_PEPPER, 0.67f);
 
     FuelRegistryEvents.BUILD.register(
         (builder, context) -> {
-          builder.add(ModItems.CHILI_PEPPER, 67 * 20);
+          builder.add(ModItems.GOLDEN_CHILI_PEPPER, 67 * 20);
         });
   }
 
-  public ChiliPepperItem(Properties properties) {
+  public GoldenChiliPepperItem(Properties properties) {
     super(properties);
   }
 
@@ -47,6 +47,7 @@ public class ChiliPepperItem extends SimplePolymerItem {
       Consumer<Component> textConsumer,
       TooltipFlag type) {
     textConsumer.accept(
-        Component.translatable("A normal chili pepper... I hope").withStyle(ChatFormatting.RED));
+        Component.translatable("Red hot chili pepper... now shining with gold!")
+            .withStyle(ChatFormatting.GOLD));
   }
 }

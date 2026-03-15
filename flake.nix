@@ -13,7 +13,8 @@
     devShells.${system}.default = pkgs.mkShell {
       nativeBuildInputs = with pkgs; [
         javaPackages.compiler.openjdk21
-        jetbrains.idea
+        google-java-format
+        # jetbrains.idea
         jdt-language-server
       ];
 
