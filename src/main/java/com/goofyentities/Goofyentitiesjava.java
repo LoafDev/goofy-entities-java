@@ -1,6 +1,7 @@
 package com.goofyentities;
 
 import com.goofyentities.item.ModItems;
+import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,11 @@ public class Goofyentitiesjava implements ModInitializer {
   @Override
   public void onInitialize() {
     LOGGER.info(MOD_ID + " loading...");
+
+    boolean loadResourcePack = PolymerResourcePackUtils.addModAssets(MOD_ID);
+    PolymerResourcePackUtils.markAsRequired();
+
+    LOGGER.info("Load resource pack status: " + (loadResourcePack ? "Success" : "Failed"));
     ModItems.initialise();
   }
 }

@@ -11,8 +11,10 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
+import xyz.nucleoid.packettweaker.PacketContext;
 
 public class GoldenChiliPepperItem extends SimplePolymerItem {
   public static final String itemName = "golden_chili_pepper";
@@ -37,6 +39,11 @@ public class GoldenChiliPepperItem extends SimplePolymerItem {
 
   public GoldenChiliPepperItem(Properties properties) {
     super(properties);
+  }
+
+  @Override
+  public Item getPolymerItem(ItemStack itemStack, PacketContext context) {
+    return Items.APPLE;
   }
 
   @Override
