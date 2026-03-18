@@ -2,13 +2,9 @@ package com.goofyentities.item;
 
 import eu.pb4.polymer.core.api.item.SimplePolymerItem;
 import java.util.function.Consumer;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
-import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -24,18 +20,6 @@ public class GoldenChiliPepperItem extends SimplePolymerItem {
 
   public static final Item.Properties itemProperties =
       new Item.Properties().food(itemFoodProperties);
-
-  public static void initialise() {
-    ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS)
-        .register((itemGroup) -> itemGroup.accept(ModItems.GOLDEN_CHILI_PEPPER));
-
-    CompostingChanceRegistry.INSTANCE.add(ModItems.GOLDEN_CHILI_PEPPER, 0.67f);
-
-    FuelRegistryEvents.BUILD.register(
-        (builder, context) -> {
-          builder.add(ModItems.GOLDEN_CHILI_PEPPER, 67 * 20);
-        });
-  }
 
   public GoldenChiliPepperItem(Properties properties) {
     super(properties);

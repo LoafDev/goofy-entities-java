@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "tools",
+  "key": {
+    "e": "minecraft:emerald",
+    "g": "minecraft:gold_ingot"
+  },
+  "pattern": [
+    " g ",
+    "geg",
+    " g "
+  ],
+  "result": {
+    "count": 1,
+    "id": "goofy-entities-java:super_star"
+  }
+}

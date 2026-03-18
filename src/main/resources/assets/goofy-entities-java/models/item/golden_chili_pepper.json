@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "goofy-entities-java:item/golden_chili_pepper"
-  }
-}

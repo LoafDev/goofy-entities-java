@@ -1,0 +1,10 @@
+{
+  "kickback": {
+    "subtitle": "sound.goofy-entities-java.kickback",
+    "sounds": ["goofy-entities-java:kickback"]
+  },
+  "iris_out": {
+    "subtitle": "sound.goofy-entities-java.iris_out",
+    "sounds": ["goofy-entities-java:iris_out"]
+  }
+}

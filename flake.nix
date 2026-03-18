@@ -16,6 +16,7 @@
         google-java-format
         # jetbrains.idea
         jdt-language-server
+        yt-dlp
       ];
 
       LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [ pkgs.libglvnd ];

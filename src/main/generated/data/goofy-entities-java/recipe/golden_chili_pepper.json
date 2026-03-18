@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "food and drink",
+  "key": {
+    "c": "goofy-entities-java:chili_pepper",
+    "g": "minecraft:gold_nugget"
+  },
+  "pattern": [
+    "ggg",
+    "gcg",
+    "ggg"
+  ],
+  "result": {
+    "count": 1,
+    "id": "goofy-entities-java:golden_chili_pepper"
+  }
+}
