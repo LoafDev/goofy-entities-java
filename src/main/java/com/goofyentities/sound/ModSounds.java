@@ -2,25 +2,24 @@ package com.goofyentities.sound;
 
 import com.goofyentities.Goofyentitiesjava;
 import eu.pb4.polymer.core.api.other.PolymerSoundEvent;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
-import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundEvent;
 
 public class ModSounds {
-  public static final PolymerSoundEvent KICKBACK = registerSound("kickback");
-  public static final PolymerSoundEvent IRIS_OUT = registerSound("iris_out");
+  public static final SoundEvent KICKBACK = registerSound("kickback");
+  public static final SoundEvent IRIS_OUT = registerSound("iris_out");
 
   public static void initialise() {
     Goofyentitiesjava.LOGGER.info("Registering sounds for " + Goofyentitiesjava.MOD_ID);
   }
 
-  private static PolymerSoundEvent registerSound(String id) {
+  private static SoundEvent registerSound(String id) {
     Identifier identifier = Identifier.fromNamespaceAndPath(Goofyentitiesjava.MOD_ID, id);
-    SoundEvent soundEvent =
-        Registry.register(
-            BuiltInRegistries.SOUND_EVENT,
-            identifier,
-            SoundEvent.createVariableRangeEvent(identifier));
+    SoundEvent obj = SoundEvent.createVariableRangeEvent(identifier);
+    PolymerSoundEvent.registerOverlay(obj);
 
-    return PolymerSoundEvent.of(SoundEvents.ANVIL_LAND);
+    return Registry.register(BuiltInRegistries.SOUND_EVENT, obj.location(), obj);
   }
 }

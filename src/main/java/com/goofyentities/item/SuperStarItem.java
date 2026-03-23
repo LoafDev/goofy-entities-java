@@ -1,10 +1,10 @@
 package com.goofyentities.item;
 
+import com.goofyentities.sound.ModSounds;
 import eu.pb4.polymer.core.api.item.SimplePolymerItem;
 import java.util.function.Consumer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -29,7 +29,7 @@ public class SuperStarItem extends SimplePolymerItem {
       return InteractionResult.PASS;
     }
 
-    level.playSound(null, user.blockPosition(), SoundEvents.ANVIL_LAND, SoundSource.PLAYERS);
+    level.playSound(null, user.blockPosition(), ModSounds.KICKBACK, SoundSource.PLAYERS);
     return InteractionResult.SUCCESS;
   }
 
